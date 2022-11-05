@@ -1,17 +1,12 @@
 'use strict';
 
-const categories = document.querySelectorAll('li.item'),
-      arrCategories = [...categories];
+const categories = document.querySelectorAll('li.item');
 
 console.log('Number of categories:', categories.length);
 
-function getTextOfTitle(arr) {
-    arr.map((el => {
-        const title = el.firstElementChild.textContent;
-        const num = el.querySelectorAll('li').length;
+categories.forEach(i => {
+    const title = i.firstElementChild.textContent;
+    const num = i.querySelectorAll('li').length;
 
-        return console.log(`Category: ${title} / Elements: ${num}`);
-    }));
-}
-
-getTextOfTitle(arrCategories);
+    console.log(`Category: ${title} / Elements: ${num}`);
+});
